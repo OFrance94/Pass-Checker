@@ -1,18 +1,20 @@
+import java.util.Scanner;
 
 public class Password 
 {
 
 	public static void main(String[] args) 
 	{
-		String pass="Merlin";
-		String pass2="1897";
-		String passcheck="Your password is ";
-		String fullpass=pass+pass2;
-		int length = fullpass.length();
+		Scanner pInput = new Scanner(System.in);
 		boolean numcheck = false;
-		char [] password=fullpass.toCharArray();
 		
-		System.out.println(passcheck+pass+pass2);
+		
+		System.out.println("Please enter password.");
+		
+		String userinput = pInput.nextLine();
+		System.out.println("Your password is "+userinput);
+		
+		char [] password=userinput.toCharArray();
 		
 		for (char c : password) {
 			if(Character.isDigit(c)) {
@@ -24,13 +26,12 @@ public class Password
 			}
 		}	
 		
-		System.out.println("Your password is "+length+" characters long.");
-		
-		if(numcheck==true) {
-			System.out.println("Your password contains numbers.");
+		System.out.println("Your password is "+userinput.length()+" characters long.");
+		if (userinput.length()<8) {
+			System.out.println("Your password is too short, please make password at least 8 characters long.");
 		}
-		else {
-			System.out.println("Your password does not contain numbers.");
+		if(numcheck==false) {
+			System.out.println("Your password must contain at least one number.");
 		}
 		
 		
