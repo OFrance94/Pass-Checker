@@ -11,8 +11,9 @@ public class Password
 		boolean arraycheck = false;
 		Scanner pInput = new Scanner(System.in);
 			
-		for(int i=5; i>=0; i--) {
-			System.out.println("Please enter " + (i+1) + " password/s.");		
+		System.out.println("Please enter 6 passwords.");	
+		
+		for(int i=5; i>=0; i--) {	
 			String userinput = pInput.nextLine();
 			passInput.add(userinput);
 			}
@@ -31,11 +32,23 @@ public class Password
 				}
 				
 			}
-			if (arraycheck == true && s.length() >= 8){
-				System.out.println("Array Password valid!");
+			if (arraycheck == true && s.length() > 8){
+				System.out.println("Array Password is Very Strong!");
+			}
+			else if(arraycheck == true && s.length() >= 5){
+				System.out.println("Array Password Strong!");
+			}
+			else if(arraycheck== true && s.length() < 5) {
+				System.out.println("Array Password needs to be longer.");
+			}
+			else if(s.length() >=8 && !(arraycheck==true)) {
+				System.out.println("Good password length, but needs numbers.");				
+			}
+			else if(s.length() >=5 && !(arraycheck==true)) {
+				System.out.println("Password should be longer and needs numbers.");
 			}
 			else {
-				System.out.println("Array Password invalid.");
+				System.out.println("Array password invalid.");
 			}
 		}
 		
