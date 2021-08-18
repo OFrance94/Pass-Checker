@@ -33,22 +33,22 @@ public class Password
 				
 			}
 			if (arraycheck == true && s.length() > 8){
-				System.out.println("Array Password is Very Strong!");
+				System.out.println("Array Password " + s +" is Very Strong!");
 			}
 			else if(arraycheck == true && s.length() >= 5){
-				System.out.println("Array Password Strong!");
+				System.out.println("Array Password " + s + "  Strong!");
 			}
 			else if(arraycheck== true && s.length() < 5) {
-				System.out.println("Array Password needs to be longer.");
+				System.out.println("Array Password " + s +" needs to be longer.");
 			}
 			else if(s.length() >=8 && !(arraycheck==true)) {
-				System.out.println("Good password length, but needs numbers.");				
+				System.out.println("Array Password " + s + " has good password length, but needs numbers.");				
 			}
 			else if(s.length() >=5 && !(arraycheck==true)) {
-				System.out.println("Password should be longer and needs numbers.");
+				System.out.println("Array Password " + s + " should be longer and needs numbers.");
 			}
 			else {
-				System.out.println("Array password invalid.");
+				System.out.println("Array password " + s + " invalid.");
 			}
 		}
 		
