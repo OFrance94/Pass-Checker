@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Password 
@@ -5,44 +7,40 @@ public class Password
 
 	public static void main(String[] args) 
 	{
-		boolean done = false;
-			
-		do 
-		{
+		List<String> passInput = new LinkedList<String>();
+		boolean arraycheck = false;
 		Scanner pInput = new Scanner(System.in);
-		System.out.println("Please enter password.");		
-		String userinput = pInput.nextLine();
-		int len = userinput.length();
-		boolean numcheck = false;
-		char [] password=userinput.toCharArray();
-		
-		for (char c : password) 
-		{
-			if(Character.isDigit(c)) {
-				numcheck=true;
-				
+			
+		for(int i=5; i>=0; i--) {
+			System.out.println("Please enter " + (i+1) + " password/s.");		
+			String userinput = pInput.nextLine();
+			passInput.add(userinput);
 			}
-			else {				
-				numcheck=false;					
-			}
-		}
-		if(len>8 && numcheck==true) {
-			System.out.println("Your password is acceptable!");
-			done = true;
-			pInput.close();
-		}
-		else {
-			System.out.println("Your password is too short and/or doesn't contain a number, try again.");
-		}
-		
-		}while(!done);
-		
-		
-		
-		
+			
+		pInput.close();
 
 		
 		
+		for (String s : passInput) {
+			char[] solocheck = s.toCharArray();
+			
+			for (Character sc : solocheck) {
+				if(Character.isDigit(sc)) {
+					arraycheck = true;
+					break;
+				}
+				
+			}
+			if (arraycheck == true && s.length() >= 8){
+				System.out.println("Array Password valid!");
+			}
+			else {
+				System.out.println("Array Password invalid.");
+			}
+		}
+		
+		
+	
 	}
 
 }
